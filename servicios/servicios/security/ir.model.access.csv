@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_servicio,Access Gestion Servicio,model_servicios_gestion,base.group_user,1,1,1,1
+access_servicio_spa,Access Servicio Spa,model_servicios_spa,base.group_user,1,1,1,1
+access_servicio_casino,Access Servicio Casino,model_servicios_casino,base.group_user,1,1,1,1
+access_servicio_restaurante,Access Servicio Restaurante,model_servicios_restaurante,base.group_user,1,1,1,1
+access_servicio_masajes,Access Servicio Masajes,model_servicios_masajes,base.group_user,1,1,1,1
+access_servicio_discoteca,Access Servicio Discoteca,model_servicios_discoteca,base.group_user,1,1,1,1
+

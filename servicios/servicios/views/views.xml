@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Acciones -->
+    <record id="action_gestion_servicio" model="ir.actions.act_window">
+        <field name="name">Gestión de Servicios</field>
+        <field name="res_model">servicios.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Acciones para los otros modelos -->
+    <!-- Acción para el Servicio Spa -->
+    <record id="action_servicio_spa" model="ir.actions.act_window">
+        <field name="name">Servicio Spa</field>
+        <field name="res_model">servicios.spa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el Servicio Casino -->
+    <record id="action_servicio_casino" model="ir.actions.act_window">
+        <field name="name">Servicio Casino</field>
+        <field name="res_model">servicios.casino</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el Servicio Restaurante -->
+    <record id="action_servicio_restaurante" model="ir.actions.act_window">
+        <field name="name">Servicio Restaurante</field>
+        <field name="res_model">servicios.restaurante</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el Servicio Masajes -->
+    <record id="action_servicio_masajes" model="ir.actions.act_window">
+        <field name="name">Servicio Masajes</field>
+        <field name="res_model">servicios.masajes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el Servicio Discoteca -->
+    <record id="action_servicio_discoteca" model="ir.actions.act_window">
+        <field name="name">Servicio Discoteca</field>
+        <field name="res_model">servicios.discoteca</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vistas -->
+    <!-- Vista para la gestión de servicios -->
+    <record id="view_gestion_servicio_tree" model="ir.ui.view">
+        <field name="name">servicios.gestion.tree</field>
+        <field name="model">servicios.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="name2"/>
+                <field name="dni"/>
+                <field name="contratacion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_gestion_servicio_form" model="ir.ui.view">
+        <field name="name">servicios.gestion.form</field>
+        <field name="model">servicios.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="name2"/>
+                        <field name="dni"/>
+                        <field name="contratacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_servicios_spa_tree" model="ir.ui.view">
+    <field name="name">servicios.spa.tree</field>
+    <field name="model">servicios.spa</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gestion_id"/>
+            <field name="jacuzzi"/>
+            <field name="sauna"/>
+            <field name="banio_turco"/>
+            <field name="piscina_olimpica"/>
+            <field name="precio_total"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_servicios_casino_tree" model="ir.ui.view">
+    <field name="name">servicios.casino.tree</field>
+    <field name="model">servicios.casino</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gestion_id"/>
+            <field name="ruleta"/>
+            <field name="black_jack"/>
+            <field name="maquinas"/>
+            <field name="poker"/>
+            <field name="precio_total"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_servicios_restaurante_tree" model="ir.ui.view">
+    <field name="name">servicios.restaurante.tree</field>
+    <field name="model">servicios.restaurante</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gestion_id"/>
+            <field name="menu_dia"/>
+            <field name="desayuno"/>
+            <field name="cena"/>
+            <field name="copas"/>
+            <field name="precio_total"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_servicios_masajes_tree" model="ir.ui.view">
+    <field name="name">servicios.masajes.tree</field>
+    <field name="model">servicios.masajes</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gestion_id"/>
+            <field name="tailandes"/>
+            <field name="japones"/>
+            <field name="italiano"/>
+            <field name="precio_total"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_servicios_discoteca_tree" model="ir.ui.view">
+    <field name="name">servicios.discoteca.tree</field>
+    <field name="model">servicios.discoteca</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gestion_id"/>
+            <field name="pista_baile"/>
+            <field name="vip"/>
+            <field name="copas"/>
+            <field name="precio_total"/>
+        </tree>
+    </field>
+</record>
+
+
+
+
+
+    <!-- Resto de vistas omitidas por brevedad -->
+
+    <!-- Menú -->
+    <menuitem id="menu_gestion_servicio" name="Gestión de Servicios" action="action_gestion_servicio"/>
+    <menuitem id="menu_gestion_spa" name="Gestión de Spa" parent="menu_gestion_servicio" action="action_servicio_spa"/>
+    <menuitem id="menu_gestion_casino" name="Gestión de Casino" parent="menu_gestion_servicio" action="action_servicio_casino"/>
+    <menuitem id="menu_gestion_restaurante" name="Gestión de Restaurante" parent="menu_gestion_servicio" action="action_servicio_restaurante"/>
+    <menuitem id="menu_gestion_masajes" name="Gestión de Masajes" parent="menu_gestion_servicio" action="action_servicio_masajes"/>
+    <menuitem id="menu_gestion_discoteca" name="Gestión de Discoteca" parent="menu_gestion_servicio" action="action_servicio_discoteca"/>
+
+
+
+    
+
+  </data>
+</odoo>
